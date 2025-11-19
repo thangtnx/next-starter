@@ -1,0 +1,16 @@
+{
+  "name": "@repo/workspace",
+  "private": true,
+  "type": "module",
+  "version": "1.0.0",
+  "description": "The workspace for projects",
+  "scripts": {
+    "clean": "rimraf node_modules .eslintcache",
+    "typecheck": "tsc --noEmit",
+    "lint": "",
+    "format": ""
+  },
+  "exports": {
+    "./typescript/*": "./src/typescript/*"
+  }
+}

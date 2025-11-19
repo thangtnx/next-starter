@@ -3,12 +3,17 @@
   "type": "module",
   "private": true,
   "version": "1.0.0",
-  "author": "",
+  "engines": {
+    "node": ">=22.18"
+  },
   "license": "MIT",
+  "author": "",
   "scripts": {
     "prepare": "lefthook install",
-    "clean": "pnpm -r --parallel exec rimraf *.log dist .turbo .next .eslintcache node_modules",
-    "clean:all": "pnpm clean && pnpm rimraf .turbo *.log node_modules",
+    "clean": "pnpm -r --parallel exec rimraf dist .turbo .next .eslintcache node_modules",
+    "clean:all": "pnpm clean && pnpm rimraf .turbo node_modules",
+    "workspace": "pnpm -C packages/workspace",
+    "www": "pnpm -C www",
     "build": "turbo run build --filter=./packages/**",
     "lint": "turbo run lint --filter=./packages/**",
     "lint:scripts": "eslint scripts --max-warnings=0 --cache",
@@ -21,12 +26,12 @@
   "dependencies": {
     "@commitlint/cli": "^20.1.0",
     "@commitlint/config-conventional": "^20.0.0",
+    "@repo/workspace": "workspace:*",
     "lefthook": "^2.0.4",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "rimraf": "^6.1.0",
-    "turbo": "^2.6.1",
-    "typescript": "^5.9.3"
+    "turbo": "^2.6.1"
   },
   "packageManager": "pnpm@10.22.0",
   "pnpm": {
