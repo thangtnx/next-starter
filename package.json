@@ -28,6 +28,7 @@
     "@commitlint/config-conventional": "^20.0.0",
     "@repo/workspace": "workspace:*",
     "lefthook": "^2.0.4",
+    "prettier": "^3.6.2",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "rimraf": "^6.1.0",

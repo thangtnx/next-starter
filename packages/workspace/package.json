@@ -8,9 +8,14 @@
     "clean": "rimraf node_modules .eslintcache",
     "typecheck": "tsc --noEmit",
     "lint": "",
-    "format": ""
+    "format": "prettier . --ignore-path ../../.prettierignore --check --cache"
   },
   "exports": {
+    "./prettier": "./src/prettier/index.ts",
+    "./prettier/*": "./src/prettier/*.js",
     "./typescript/*": "./src/typescript/*"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1"
   }
 }
