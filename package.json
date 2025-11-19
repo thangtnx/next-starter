@@ -1,0 +1,38 @@
+{
+  "name": "next-starter",
+  "type": "module",
+  "private": true,
+  "version": "1.0.0",
+  "author": "",
+  "license": "MIT",
+  "scripts": {
+    "prepare": "lefthook install",
+    "clean": "pnpm -r --parallel exec rimraf *.log dist .turbo .next .eslintcache node_modules",
+    "clean:all": "pnpm clean && pnpm rimraf .turbo *.log node_modules",
+    "build": "turbo run build --filter=./packages/**",
+    "lint": "turbo run lint --filter=./packages/**",
+    "lint:scripts": "eslint scripts --max-warnings=0 --cache",
+    "format": "turbo run format --filter=./packages/**",
+    "typecheck": "turbo run typecheck --filter=./packages/**",
+    "typecheck:scripts": "tsc --noEmit",
+    "spellcheck": "cspell \"**/*.{js,jsx,mjs,ts,tsx,mts,md,mdx}\" --quiet",
+    "quality": "pnpm format && pnpm lint && pnpm typecheck && pnpm test"
+  },
+  "dependencies": {
+    "@commitlint/cli": "^20.1.0",
+    "@commitlint/config-conventional": "^20.0.0",
+    "lefthook": "^2.0.4",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "rimraf": "^6.1.0",
+    "turbo": "^2.6.1",
+    "typescript": "^5.9.3"
+  },
+  "packageManager": "pnpm@10.22.0",
+  "pnpm": {
+    "overrides": {
+      "react": "^19.2.0",
+      "react-dom": "^19.2.0"
+    }
+  }
+}

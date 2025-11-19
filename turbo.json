@@ -1,0 +1,14 @@
+{
+  "$schema": "https://turborepo.com/schema.json",
+  "tasks": {
+    "build": { "dependsOn": ["^build"], "outputs": ["dist/**"] },
+    "typecheck": { "cache": false },
+    "lint": { "cache": false },
+    "format": { "cache": false },
+    "dev": {
+      "persistent": true,
+      "cache": false
+    }
+  },
+  "globalDependencies": ["tsconfig.json"]
+}

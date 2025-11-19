@@ -1,0 +1,13 @@
+{
+    "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
+    "language": "en",
+    "words": [],
+    "ignorePaths": [
+      "**/node_modules/**",
+      "**/dist/**",
+      "**/.next/**",
+      "**/.turbo/**",
+      "pnpm-lock.yaml",
+      ".changelog/**",
+    ]
+}
