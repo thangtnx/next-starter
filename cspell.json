@@ -8,6 +8,6 @@
       "**/.next/**",
       "**/.turbo/**",
       "pnpm-lock.yaml",
-      ".changelog/**",
+      "lefthook.yml"
     ]
 }
