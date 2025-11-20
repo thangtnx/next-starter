@@ -8,6 +8,82 @@ pre-commit:
         pnpm prettier {staged_files} --write
       stage_fixed: true
 
+eslint:
+  parallel: true
+  commands:
+    root:
+      glob: "*.{js,cjs,mjs,jsx,ts,cts,mts,tsx,d.ts}"
+      exclude:
+        - packages/**
+        - playgrounds/**
+        - www/**
+      run: |
+        pnpm eslint {staged_files} --max-warnings=0 --fix --cache
+      stage_fixed: true
+
+    cli:
+      root: packages/cli/
+      glob: "*.{js,cjs,mjs,jsx,ts,cts,mts,tsx,d.ts}"
+      run: |
+        pnpm eslint {staged_files} --max-warnings=0 --fix --cache
+      stage_fixed: true
+
+    react:
+      root: packages/react/
+      glob: "*.{js,cjs,mjs,jsx,ts,cts,mts,tsx,d.ts}"
+      run: |
+        pnpm eslint {staged_files} --max-warnings=0 --fix --cache
+      stage_fixed: true
+
+    utils:
+      root: packages/utils/
+      glob: "*.{js,cjs,mjs,jsx,ts,cts,mts,tsx,d.ts}"
+      run: |
+        pnpm eslint {staged_files} --max-warnings=0 --fix --cache
+      stage_fixed: true
+
+    workspace:
+      root: packages/workspace/
+      glob: "*.{js,cjs,mjs,jsx,ts,cts,mts,tsx,d.ts}"
+      run: |
+        pnpm eslint {staged_files} --max-warnings=0 --fix --cache
+      stage_fixed: true
+
+    www:
+      root: www/
+      glob: "*.{js,cjs,mjs,jsx,ts,cts,mts,tsx,d.ts}"
+      run: |
+        pnpm eslint {staged_files} --max-warnings=0 --fix --cache
+      stage_fixed: true
+
+    next-app:
+      root: playgrounds/next/app/
+      glob: "*.{js,cjs,mjs,jsx,ts,cts,mts,tsx,d.ts}"
+      run: |
+        pnpm eslint {staged_files} --max-warnings=0 --fix --cache
+      stage_fixed: true
+
+    next-pages:
+      root: playgrounds/next/pages/
+      glob: "*.{js,cjs,mjs,jsx,ts,cts,mts,tsx,d.ts}"
+      run: |
+        pnpm eslint {staged_files} --max-warnings=0 --fix --cache
+      stage_fixed: true
+
+    vite:
+      root: playgrounds/vite/
+      glob: "*.{js,cjs,mjs,jsx,ts,cts,mts,tsx,d.ts}"
+      run: |
+        pnpm eslint {staged_files} --max-warnings=0 --fix --cache
+      stage_fixed: true
+
+    remix:
+      root: playgrounds/remix/
+      glob: "*.{js,cjs,mjs,jsx,ts,cts,mts,tsx,d.ts}"
+      run: |
+        pnpm eslint {staged_files} --max-warnings=0 --fix --cache
+      stage_fixed: true
+
 commit-msg:
   commands:
     commitlint:

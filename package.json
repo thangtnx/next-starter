@@ -34,11 +34,18 @@
     "rimraf": "^6.1.0",
     "turbo": "^2.6.1"
   },
+  "devDependencies": {
+    "@types/node": "^22",
+    "eslint": "^9.39.1",
+    "typescript": "^5.7.2"
+  },
   "packageManager": "pnpm@10.22.0",
   "pnpm": {
     "overrides": {
+      "eslint": "^9.39.1",
       "react": "^19.2.0",
-      "react-dom": "^19.2.0"
+      "react-dom": "^19.2.0",
+      "typescript": "^5.7.2"
     }
   }
 }
